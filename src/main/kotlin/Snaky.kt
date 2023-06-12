@@ -1,10 +1,16 @@
 import commands.*
+import ru.orewaee.krayon.brightGreen
+
+import ru.orewaee.krayon.green
+import ru.orewaee.krayon.hex
+
 import kotlin.system.exitProcess
 
 class Snaky {
     companion object {
         fun start() {
             while (true) {
+                print("~ ".green)
                 val arguments = readln().split(" ")
 
                 val command = when (arguments[0].lowercase()) {

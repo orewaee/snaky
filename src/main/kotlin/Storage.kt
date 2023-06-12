@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 import entities.Password
 
 import kotlinx.serialization.SerializationException
@@ -29,17 +27,14 @@ class Storage {
 
                 passwords = Json.decodeFromString(file.readText())
             } catch (exception: SerializationException) {
-                println("An error occurred while loading data from the passwords.json file")
-                exitProcess(1)
+                Snaky.stop("An error occurred while loading data from the passwords.json file", 1)
             }
         }
 
         fun reload() {
-            try {
-                passwords = Json.decodeFromString(file.readText())
-            } catch (exception: SerializationException) {
-                println("An error occurred while loading data from the passwords.json file")
-                exitProcess(1)
+            try { passwords = Json.decodeFromString(file.readText()) }
+            catch (exception: SerializationException) {
+                Snaky.stop("An error occurred while loading data from the passwords.json file", 1)
             }
         }
 

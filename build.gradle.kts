@@ -8,8 +8,6 @@ plugins {
     kotlin("plugin.serialization") version "1.8.21"
 
     id("com.github.johnrengelman.shadow") version "7.1.2"
-
-    id("io.ktor.plugin") version "2.3.1"
 }
 
 group = "ru.orewaee"
@@ -17,16 +15,14 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
+
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
 
-    implementation("io.ktor:ktor-server-cors-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
+    implementation("com.github.orewaee:krayon:1.1.0")
 }
 
 application.mainClass.set("MainKt")

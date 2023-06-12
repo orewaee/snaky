@@ -1,12 +1,10 @@
 package commands
 
-import kotlin.system.exitProcess
+import Snaky
 
 class Stop {
     companion object: Command {
-        override fun execute(arguments: List<String>) {
-            println("Snaky stopped")
-            exitProcess(0)
-        }
+        override fun execute(arguments: List<String>) =
+            Snaky.stop("Snaky stopped", 0)
     }
 }

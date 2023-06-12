@@ -6,7 +6,6 @@ class Get {
     companion object: Command {
         override fun execute(arguments: List<String>) {
             if (arguments.isEmpty()) return println("Invalid command syntax")
-
             val index = arguments[0].toIntOrNull() ?: return println("Invalid command syntax")
 
             val passwords = Storage.get()

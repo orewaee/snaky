@@ -6,7 +6,6 @@ class Edit {
     companion object: Command {
         override fun execute(arguments: List<String>) {
             if (arguments.size < 4) return println("Invalid command syntax")
-
             val index = arguments[0].toIntOrNull() ?: return println("Invalid command syntax")
 
             val passwords = Storage.get()

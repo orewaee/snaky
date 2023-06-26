@@ -1,11 +1,12 @@
 package commands
 
 import Storage
+import ru.orewaee.krayon.italic
 
 class Find {
     companion object: Command {
         override fun execute(arguments: List<String>) {
-            if (arguments.isEmpty()) return println("Invalid command syntax")
+            if (arguments.isEmpty()) return println("Invalid command syntax. Use: " + "find <name>".italic)
 
             val name = arguments[0].lowercase()
 

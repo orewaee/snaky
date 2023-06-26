@@ -1,11 +1,12 @@
 package commands
 
 import Storage
+import ru.orewaee.krayon.italic
 
 class Get {
     companion object: Command {
         override fun execute(arguments: List<String>) {
-            if (arguments.isEmpty()) return println("Invalid command syntax")
+            if (arguments.isEmpty()) return println("Invalid command syntax. Use: " + "get <index>".italic)
             val index = arguments[0].toIntOrNull() ?: return println("Invalid command syntax")
 
             val passwords = Storage.get()

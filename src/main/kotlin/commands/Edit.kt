@@ -1,11 +1,12 @@
 package commands
 
 import Storage
+import ru.orewaee.krayon.italic
 
 class Edit {
     companion object: Command {
         override fun execute(arguments: List<String>) {
-            if (arguments.size < 4) return println("Invalid command syntax")
+            if (arguments.size < 4) return println("Invalid command syntax. Use: " + "edit <index> <new name> <new username> <new password>".italic)
             val index = arguments[0].toIntOrNull() ?: return println("Invalid command syntax")
 
             val passwords = Storage.get()
